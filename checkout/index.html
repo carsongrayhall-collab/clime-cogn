@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | Clime</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&family=Gentium+Plus&family=Geologica:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+  </head>
+  <body>
+    <header class="site-header is-collapsed" aria-label="Primary">
+      <div class="header-canvas">
+        <div class="header-scrim" aria-hidden="true"></div>
+        <div class="header-menu-wrap">
+          <button class="icon-button header-menu" aria-label="Open menu">
+            <img src="../public/assets/icons/top-left-corner.svg" alt="" />
+          </button>
+          <nav class="header-flyout" aria-label="Menu">
+            <div class="header-flyout-panel header-flyout-main">
+              <div class="flyout-row has-submenu">
+                <a href="/elevate">Our Products</a>
+                <div class="header-flyout-panel header-submenu product-hover-frame">
+                  <a href="/elevate">Meet Elevate™</a>
+                  <span>Our Suppliers</span>
+                </div>
+              </div>
+              <div class="flyout-row has-submenu">
+                <a href="/team">Our Team</a>
+                <div class="header-flyout-panel header-submenu team-hover-frame">
+                  <a href="/team">Meet The Team</a>
+                  <a href="/philosophy">Our Philosophy</a>
+                </div>
+              </div>
+              <div class="flyout-row has-submenu">
+                <span>Reference</span>
+                <div class="header-flyout-panel header-submenu reference-hover-frame">
+                  <a href="/faq">FAQ</a>
+                  <a href="/privacy">Privacy Policy</a>
+                  <a href="/legal">Legal Statement</a>
+                  <span>Terms and Conditions</span>
+                </div>
+              </div>
+              <div class="flyout-row">
+                <a href="/">Home</a>
+              </div>
+              <span class="flyout-social">Instagram</span>
+              <span class="flyout-social">Facebook</span>
+              <span class="flyout-social">Linkedin</span>
+            </div>
+          </nav>
+        </div>
+        <a class="header-logo-full" href="/" aria-label="Clime home">
+          <img class="header-logo-mark" src="../public/assets/updated/logos/clime-logo-header.png" alt="" />
+          <span>clime</span>
+        </a>
+        <a class="header-logo-collapsed" href="/" aria-label="Clime home">
+          <img src="../public/assets/updated/logos/header-logo-compressed.png" alt="Clime" />
+        </a>
+        <a class="header-actions" href="/checkout/" aria-label="View cart">
+          <img src="../public/assets/icons/top-right-corner.svg" alt="" />
+        </a>
+      </div>
+    </header>
+
+    <main class="site-shell">
+      <section class="checkout-stage" aria-label="Checkout basket">
+        <div class="checkout-canvas">
+          <h1 class="checkout-title">My Basket</h1>
+
+          <img
+            class="checkout-main-image"
+            data-checkout-main
+            src="../public/assets/updated/product/spotlight-front-hires.png"
+            alt="Elevate product"
+          />
+          <button
+            class="checkout-thumb checkout-thumb-1 is-selected"
+            type="button"
+            data-checkout-src="../public/assets/updated/product/spotlight-front-hires.png"
+            aria-label="Show front bottle image"
+          >
+            <span class="spotlight-thumb-image spotlight-thumb-front" aria-hidden="true"></span>
+          </button>
+          <button
+            class="checkout-thumb checkout-thumb-2"
+            type="button"
+            data-checkout-src="../public/assets/updated/product/spotlight-facts-hires.png"
+            aria-label="Show barcode bottle image"
+          >
+            <span class="spotlight-thumb-image spotlight-thumb-facts" aria-hidden="true"></span>
+          </button>
+          <button
+            class="checkout-thumb checkout-thumb-3"
+            type="button"
+            data-checkout-src="../public/assets/updated/product/spotlight-story-hires.png"
+            aria-label="Show supplement facts bottle image"
+          >
+            <span class="spotlight-thumb-image spotlight-thumb-side" aria-hidden="true"></span>
+          </button>
+
+          <div class="checkout-product-title">
+            <h2>Elevate&trade; S.1</h2>
+            <p> Receive 15% Off with Monthly Subscription</p>
+          </div>
+
+          <div class="checkout-description-wrap">
+            <p
+              class="checkout-description"
+              data-basket-description
+              data-blur-copy="Ginkgo Biloba cleans and expands nutrient delivery to the brain,Guarana provides instant and long-lasting energy. Rhodiola Rosea regulates energy and stress to combat burnout and anxiety. . . . . . ."
+            >
+              Ginkgo Biloba cleans and expands nutrient delivery to the brain,Guarana provides
+              instant and long-lasting energy. Rhodiola Rosea regulates energy and stress to combat
+              burnout and anxiety. . . . . . .
+            </p>
+            <button
+              class="checkout-description-toggle"
+              type="button"
+              data-description-toggle
+              aria-expanded="false"
+              aria-label="Expand product description"
+            ></button>
+          </div>
+
+          <p class="checkout-capsules">60 capsules</p>
+          <p class="checkout-delivery">Delivery: 4-6 working days<br />Incl. VAT, excl. shipping<br />SKU: 1001</p>
+
+          <div class="quantity-control checkout-quantity" data-quantity-control aria-label="Quantity">
+            <button class="quantity-prefix" type="button" data-clear-cart aria-label="Clear cart">x</button>
+            <select class="quantity-select" data-checkout-quantity-select aria-label="Quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">+10</option>
+            </select>
+            <div class="quantity-stepper" hidden>
+              <span class="quantity-value" data-checkout-quantity-value>1</span>
+              <div class="quantity-stepper-buttons">
+                <button type="button" data-checkout-quantity-up aria-label="Increase quantity"></button>
+                <button type="button" data-checkout-quantity-down aria-label="Decrease quantity"></button>
+              </div>
+            </div>
+          </div>
+
+          <label class="checkout-subscription">
+            <input type="checkbox" data-subscription-toggle />
+            <span class="subscription-box" aria-hidden="true"></span>
+            <span>Subscribe monthly.<br />Save 15%</span>
+          </label>
+
+          <section class="order-summary" aria-label="Order summary">
+            <h2>Order Summary</h2>
+            <div class="summary-row subtotal-row">
+              <span>Subtotal</span>
+              <span data-subtotal>$69.99</span>
+            </div>
+            <div class="summary-row shipping-row">
+              <span>Shipping</span>
+              <span data-shipping>$3.55</span>
+            </div>
+            <div class="summary-row discount-row">
+              <span data-discount-label>Discount</span>
+              <span data-discount>$0.00</span>
+            </div>
+            <div class="summary-row total-row">
+              <span>Order Total (incl. VAT)</span>
+              <span data-total>$73.54</span>
+            </div>
+            <a class="checkout-proceed" href="#" data-stripe-checkout aria-label="Proceed to Stripe checkout">
+              Proceed to Checkout
+            </a>
+            <p class="checkout-status" data-checkout-status aria-live="polite"></p>
+          </section>
+
+          <footer class="site-footer checkout-footer" aria-label="Footer">
+            <nav class="footer-links" aria-label="Footer navigation">
+              <div>
+                <a href="#">Contact us</a>
+                <a href="/faq">FAQ</a>
+              </div>
+              <div>
+                <a href="#">Our Sources</a>
+                <a href="#">About Us</a>
+                <a href="#">Cancellations</a>
+              </div>
+              <div>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/legal">Legal Statement</a>
+                <a href="#">Terms and Conditions</a>
+              </div>
+              <div>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Linkedin</a>
+              </div>
+            </nav>
+            <img class="social-arrows" src="../public/assets/icons/socials-arrows.svg" alt="" />
+            <div class="footer-rule"></div>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script src="../public/assets/js/menu.js"></script>
+    <script>
+      (() => {
+        const productPrice = 69.99;
+        const subscriptionPrice = 59.0;
+        const shipping = 3.55;
+        const collapsedDescription =
+          "Ginkgo Biloba cleans and expands nutrient delivery to the brain,Guarana provides instant and long-lasting energy. Rhodiola Rosea regulates energy and stress to combat burnout and anxiety. . . . . . .";
+        const expandedDescription =
+          "Ginkgo Biloba cleans and expands nutrient delivery to the brain,Guarana provides instant and long-lasting energy. Rhodiola Rosea regulates energy and stress to combat burnout and anxiety. Bacopa Monnieri's long-term effects build enhanced memory, improved learning and focus, and neuron protection s from oxitive stress while sup[porting long-term brain adaptation. Finally, Phosphatidylserine (PSI) strengthens learning and slows cognitive decline.";
+
+        const params = new URLSearchParams(window.location.search);
+        const initialQuantity = Number.parseInt(params.get("quantity") || "1", 10);
+        const initialImage = params.get("image");
+
+        const mainImage = document.querySelector("[data-checkout-main]");
+        const thumbs = [...document.querySelectorAll("[data-checkout-src]")];
+        const quantityControl = document.querySelector("[data-quantity-control]");
+        const quantitySelect = document.querySelector("[data-checkout-quantity-select]");
+        const quantityValue = document.querySelector("[data-checkout-quantity-value]");
+        const quantityDown = document.querySelector("[data-checkout-quantity-down]");
+        const quantityUp = document.querySelector("[data-checkout-quantity-up]");
+        const clearCart = document.querySelector("[data-clear-cart]");
+        const subscriptionToggle = document.querySelector("[data-subscription-toggle]");
+        const checkoutButton = document.querySelector("[data-stripe-checkout]");
+        const checkoutStatus = document.querySelector("[data-checkout-status]");
+        const subtotalNode = document.querySelector("[data-subtotal]");
+        const shippingNode = document.querySelector("[data-shipping]");
+        const discountNode = document.querySelector("[data-discount]");
+        const discountLabel = document.querySelector("[data-discount-label]");
+        const totalNode = document.querySelector("[data-total]");
+        const canvas = document.querySelector(".checkout-canvas");
+        const descriptionWrap = document.querySelector(".checkout-description-wrap");
+        const descriptionToggle = document.querySelector("[data-description-toggle]");
+        const descriptionNode = document.querySelector("[data-basket-description]");
+
+        let quantity = Number.isFinite(initialQuantity) ? Math.max(1, initialQuantity) : 1;
+        let isSubscription = params.get("subscription") === "1";
+
+        const formatMoney = (value) => `$${value.toFixed(2)}`;
+
+        const updateQuantityControl = () => {
+          const useStepper = quantity === 0 || quantity >= 10;
+          if (quantityValue) quantityValue.textContent = String(quantity);
+          if (quantitySelect) {
+            quantitySelect.value = String(Math.min(Math.max(quantity, 1), 10));
+            quantitySelect.hidden = useStepper;
+          }
+
+          const stepper = quantityControl?.querySelector(".quantity-stepper");
+          if (stepper) stepper.hidden = !useStepper;
+          quantityControl?.classList.toggle("is-stepper", useStepper);
+        };
+
+        const updateTotals = () => {
+          const subtotal = productPrice * quantity;
+          const activeShipping = quantity > 0 ? shipping : 0;
+          const discount = isSubscription ? (productPrice - subscriptionPrice) * quantity : 0;
+          const total = subtotal + activeShipping - discount;
+          updateQuantityControl();
+          subtotalNode.textContent = formatMoney(subtotal);
+          shippingNode.textContent = formatMoney(activeShipping);
+          if (discountLabel) {
+            discountLabel.textContent = isSubscription ? "Subscription Discount" : "Discount";
+          }
+          discountNode.textContent = discount > 0 ? `-${formatMoney(discount)}` : formatMoney(0);
+          totalNode.textContent = formatMoney(total);
+          checkoutButton?.classList.toggle("is-disabled", quantity === 0);
+        };
+
+        const setQuantity = (value) => {
+          quantity = Math.max(0, Math.min(99, value));
+          updateTotals();
+        };
+
+        thumbs.forEach((thumb) => {
+          thumb.addEventListener("click", () => {
+            mainImage.src = thumb.dataset.checkoutSrc;
+            thumbs.forEach((item) => item.classList.toggle("is-selected", item === thumb));
+          });
+        });
+
+        if (initialImage) {
+          mainImage.src = initialImage;
+          thumbs.forEach((thumb) => {
+            thumb.classList.toggle("is-selected", thumb.dataset.checkoutSrc === initialImage);
+          });
+        }
+
+        quantitySelect?.addEventListener("change", () => setQuantity(Number(quantitySelect.value)));
+        quantityDown?.addEventListener("click", () => setQuantity(quantity - 1));
+        quantityUp?.addEventListener("click", () => setQuantity(quantity + 1));
+        clearCart?.addEventListener("click", () => setQuantity(0));
+        subscriptionToggle.checked = isSubscription;
+        subscriptionToggle?.addEventListener("change", () => {
+          isSubscription = subscriptionToggle.checked;
+          updateTotals();
+        });
+
+        checkoutButton?.addEventListener("click", async (event) => {
+          event.preventDefault();
+          if (quantity < 1) {
+            if (checkoutStatus) checkoutStatus.textContent = "Your basket is empty.";
+            return;
+          }
+
+          checkoutButton.classList.add("is-loading");
+          if (checkoutStatus) checkoutStatus.textContent = "Opening secure checkout...";
+
+          try {
+            const response = await fetch("/api/create-checkout-session", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                product: "elevate-s1",
+                quantity,
+                subscription: isSubscription,
+              }),
+            });
+
+            const payload = await response.json();
+            if (!response.ok || !payload.url) {
+              throw new Error(payload.error || "Unable to create checkout session.");
+            }
+
+            window.location.href = payload.url;
+          } catch (error) {
+            checkoutButton.classList.remove("is-loading");
+            if (checkoutStatus) checkoutStatus.textContent = error.message;
+          }
+        });
+
+        descriptionToggle.addEventListener("click", () => {
+          const expanded = descriptionWrap.classList.toggle("is-expanded");
+          canvas?.classList.toggle("is-description-expanded", expanded);
+          if (descriptionNode) {
+            const nextDescription = expanded ? expandedDescription : collapsedDescription;
+            descriptionNode.textContent = nextDescription;
+            descriptionNode.setAttribute("data-blur-copy", nextDescription);
+          }
+          descriptionToggle.setAttribute("aria-expanded", String(expanded));
+          descriptionToggle.setAttribute(
+            "aria-label",
+            expanded ? "Collapse product description" : "Expand product description",
+          );
+        });
+
+        updateTotals();
+      })();
+    </script>
+  </body>
+</html>
