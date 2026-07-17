@@ -2,8 +2,15 @@
   "name": "clime-static-site",
   "version": "1.0.0",
   "private": true,
+  "dependencies": {
+    "next": "^15.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "scripts": {
-    "build": "node scripts/build-vercel.js",
-    "dev": "node server.js"
+    "build": "node scripts/prepare-next-static.js && next build",
+    "dev": "node scripts/prepare-next-static.js && next dev",
+    "legacy:dev": "node server.js",
+    "start": "next start"
   }
 }

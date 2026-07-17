@@ -4,5 +4,9 @@ stripe-sandbox-keys.txt
 privacy/sc1080_midterm_study_guide.pdf
 privacy/sc1080_midterm_study_guide.tex
 node_modules/
+.next/
 dist/
 .vercel/
+public/_site/
+public/styles.css
+public/favicon.png

@@ -1,24 +1,10 @@
-const https = require("https");
+import https from "https";
 
 const STRIPE_API_HOST = "api.stripe.com";
 const STRIPE_API_VERSION = "2025-06-30.basil";
 const SINGLE_PRICE_ID = process.env.STRIPE_SINGLE_PRICE_ID || "price_1TtlKLLxGPIiNmdEIq9TpUAf";
 const MONTHLY_PRICE_ID = process.env.STRIPE_MONTHLY_PRICE_ID || "price_1TtlJYLxGPIiNmdETqc7hQpE";
 const SHIPPING_AMOUNT_CENTS = 355;
-
-const readBody = (req) =>
-  new Promise((resolve, reject) => {
-    let body = "";
-    req.on("data", (chunk) => {
-      body += chunk;
-      if (body.length > 1_000_000) {
-        req.destroy();
-        reject(new Error("Request body is too large."));
-      }
-    });
-    req.on("end", () => resolve(body));
-    req.on("error", reject);
-  });
 
 const loadStripeSecret = () => {
   if (process.env.STRIPE_SECRET_KEY) return process.env.STRIPE_SECRET_KEY;
@@ -73,21 +59,17 @@ const stripeRequest = (pathname, params) =>
 const isPaypalUnavailableError = (error) =>
   /payment method type "paypal" is invalid|paypal.+activated in your dashboard/i.test(error.message || "");
 
-module.exports = async (req, res) => {
-  if (req.method !== "POST") {
-    res.statusCode = 405;
-    res.setHeader("Content-Type", "application/json; charset=utf-8");
-    res.end(JSON.stringify({ error: "Method not allowed" }));
-    return;
-  }
+export const runtime = "nodejs";
 
+export async function POST(request) {
   try {
-    const payload = JSON.parse((await readBody(req)) || "{}");
+    const payload = await request.json().catch(() => ({}));
     const quantity = Math.max(1, Math.min(99, Number.parseInt(payload.quantity || "1", 10)));
     const isSubscription = payload.subscription === true;
     const priceId = isSubscription ? MONTHLY_PRICE_ID : SINGLE_PRICE_ID;
-    const protocol = req.headers["x-forwarded-proto"] || "https";
-    const origin = `${protocol}://${req.headers.host}`;
+    const protocol = request.headers.get("x-forwarded-proto") || "https";
+    const host = request.headers.get("host");
+    const origin = `${protocol}://${host}`;
 
     const params = {
       mode: isSubscription ? "subscription" : "payment",
@@ -129,12 +111,8 @@ module.exports = async (req, res) => {
       session = await stripeRequest("/v1/checkout/sessions", params);
     }
 
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "application/json; charset=utf-8");
-    res.end(JSON.stringify({ url: session.url }));
+    return Response.json({ url: session.url });
   } catch (error) {
-    res.statusCode = 500;
-    res.setHeader("Content-Type", "application/json; charset=utf-8");
-    res.end(JSON.stringify({ error: error.message }));
+    return Response.json({ error: error.message }, { status: 500 });
   }
-};
+}
