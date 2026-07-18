@@ -209,6 +209,92 @@
             <p class="icon-caption">to stabilize and clarify</p>
           </section>
 
+          <section class="mobile-ingredient-timeline" data-mobile-ingredient-timeline aria-label="Elevate ingredient progression">
+            <div class="mobile-timeline-rail" aria-hidden="true">
+              <span data-mobile-timeline-progress></span>
+            </div>
+
+            <article class="mobile-timeline-step" data-mobile-step>
+              <p class="mobile-step-index">Ingredient 1</p>
+              <h3>Ginkgo Biloba</h3>
+              <div class="mobile-step-copy">
+                <p>
+                  Ginkgo Biloba cleans and expands micro-blood vessels in the brain. Its unique
+                  shape accelerates oxygen and sugar transmission past the blood brain barrier.
+                  Provides immediate energy, protects neurons from stress, and combats free radicals.
+                </p>
+              </div>
+              <div class="mobile-step-icon" aria-hidden="true">
+                <img src="../public/assets/product/icons/ginkgo.svg" alt="" />
+                <p>to grow and nourish</p>
+              </div>
+            </article>
+
+            <article class="mobile-timeline-step" data-mobile-step>
+              <p class="mobile-step-index">Ingredient 2</p>
+              <h3>Guarana</h3>
+              <div class="mobile-step-copy">
+                <p>
+                  Guarana acts as a sustainable caffeine substitute. Its molecular shape slow
+                  releases constant energy signals to the brain to deliver burn-out free motivation
+                  and focus activation.
+                </p>
+              </div>
+              <div class="mobile-step-icon" aria-hidden="true">
+                <img src="../public/assets/product/icons/ingredient-2.svg" alt="" />
+                <p>to energize and alert</p>
+              </div>
+            </article>
+
+            <article class="mobile-timeline-step" data-mobile-step>
+              <p class="mobile-step-index">Ingredient 3</p>
+              <h3>Rhodiola Rosea</h3>
+              <div class="mobile-step-copy">
+                <p>
+                  Rhodiola Rosea acts as a premier adaptogen. Rhodiola optimizes neurotransmitters
+                  to keep chemicals like dopamine and serotonin in the brain longer. This attacks
+                  mental and physical fatigue and shields against stress.
+                </p>
+              </div>
+              <div class="mobile-step-icon" aria-hidden="true">
+                <img src="../public/assets/product/icons/ingredient-3.svg" alt="" />
+                <p>to defend and focus</p>
+              </div>
+            </article>
+
+            <article class="mobile-timeline-step" data-mobile-step>
+              <p class="mobile-step-index">Ingredient 4</p>
+              <h3>Bacopa Monnieri</h3>
+              <div class="mobile-step-copy">
+                <p>
+                  Bacopa Monnieri repairs and enhances mental robustness. Bacopa provides nutrients
+                  to repair damaged neurons, accelerate dendritic branching, increase learning
+                  speed, and fortify long-term memory stores.
+                </p>
+              </div>
+              <div class="mobile-step-icon" aria-hidden="true">
+                <img src="../public/assets/product/icons/ingredient-4.svg" alt="" />
+                <p>to center and quiet</p>
+              </div>
+            </article>
+
+            <article class="mobile-timeline-step" data-mobile-step>
+              <p class="mobile-step-index">Ingredient 5</p>
+              <h3>Phosphatidylserine (PSI)</h3>
+              <div class="mobile-step-copy">
+                <p>
+                  Phosphatidylserine accelerates and optimizes the brain's structural engine. As a
+                  vital nutrient for the hippocampus, PSI strengthens the learning center of the
+                  brain and slows cognitive decline.
+                </p>
+              </div>
+              <div class="mobile-step-icon" aria-hidden="true">
+                <img src="../public/assets/product/icons/psi.svg" alt="" />
+                <p>to stabilize and clarify</p>
+              </div>
+            </article>
+          </section>
+
           <div class="product-cart">
             <a href="/checkout/" class="product-cart-button" data-cart-link>Add to Cart</a>
           <p>$69.99</p>
@@ -497,6 +583,67 @@
         update();
         window.addEventListener("scroll", scheduleUpdate, { passive: true });
         window.addEventListener("resize", handleResize);
+      })();
+
+      (() => {
+        const timeline = document.querySelector("[data-mobile-ingredient-timeline]");
+        if (!timeline) return;
+
+        const steps = [...timeline.querySelectorAll("[data-mobile-step]")];
+        const progressLine = timeline.querySelector("[data-mobile-timeline-progress]");
+        const mobileQuery = window.matchMedia("(max-width: 760px)");
+        let scheduled = false;
+
+        const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+        const smooth = (value) => {
+          const t = clamp(value);
+          return t * t * (3 - 2 * t);
+        };
+
+        const setStepState = (step, descOpacity, iconOpacity, active) => {
+          step.style.setProperty("--desc-opacity", descOpacity.toFixed(3));
+          step.style.setProperty("--icon-opacity", iconOpacity.toFixed(3));
+          step.style.setProperty("--desc-y", `${((1 - descOpacity) * 18).toFixed(1)}px`);
+          step.style.setProperty("--icon-y", `${((1 - iconOpacity) * 20).toFixed(1)}px`);
+          step.classList.toggle("is-mobile-active", active);
+        };
+
+        const updateTimeline = () => {
+          scheduled = false;
+
+          if (!mobileQuery.matches) {
+            steps.forEach((step) => setStepState(step, 1, 0, false));
+            if (progressLine) progressLine.style.transform = "scaleY(0)";
+            return;
+          }
+
+          const timelineRect = timeline.getBoundingClientRect();
+          const travel = Math.max(1, timeline.offsetHeight - window.innerHeight * 0.72);
+          const wholeProgress = clamp((window.innerHeight * 0.54 - timelineRect.top) / travel);
+          if (progressLine) progressLine.style.transform = `scaleY(${wholeProgress.toFixed(3)})`;
+
+          steps.forEach((step) => {
+            const rect = step.getBoundingClientRect();
+            const entry = smooth((window.innerHeight * 0.78 - rect.top) / (window.innerHeight * 0.34));
+            const local = clamp((window.innerHeight * 0.62 - rect.top) / Math.max(1, rect.height * 0.7));
+            const iconOpacity = smooth((local - 0.54) / 0.34);
+            const descOpacity = clamp(entry * (1 - iconOpacity), 0.08, 1);
+            const active = entry > 0.2 && local < 1;
+
+            setStepState(step, descOpacity, iconOpacity, active);
+          });
+        };
+
+        const scheduleTimeline = () => {
+          if (scheduled) return;
+          scheduled = true;
+          requestAnimationFrame(updateTimeline);
+        };
+
+        updateTimeline();
+        window.addEventListener("scroll", scheduleTimeline, { passive: true });
+        window.addEventListener("resize", scheduleTimeline);
+        mobileQuery.addEventListener?.("change", scheduleTimeline);
       })();
     </script>
   </body>
