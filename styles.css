@@ -4241,7 +4241,7 @@ img {
   }
 
   .mobile-home > .mobile-section:first-of-type h2 {
-    color: #cfa064;
+    color: #000000;
     font-family: Gelasio, Georgia, serif;
     font-size: clamp(42px, 12vw, 62px);
     font-weight: 400;
