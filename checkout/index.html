@@ -159,7 +159,7 @@
           <label class="checkout-subscription">
             <input type="checkbox" data-subscription-toggle />
             <span class="subscription-box" aria-hidden="true"></span>
-            <span>Subscribe monthly.<br />Save 15%</span>
+            <span>Subscribe monthly and save 15%<br />Cancel anytime</span>
           </label>
 
           <section class="order-summary" aria-label="Order summary">
@@ -253,6 +253,7 @@
 
         let quantity = Number.isFinite(initialQuantity) ? Math.max(1, initialQuantity) : 1;
         let isSubscription = params.get("subscription") === "1";
+        const isMobileCheckout = window.matchMedia("(max-width: 760px)").matches;
 
         const formatMoney = (value) => `$${value.toFixed(2)}`;
 
@@ -301,6 +302,11 @@
           mainImage.src = initialImage;
           thumbs.forEach((thumb) => {
             thumb.classList.toggle("is-selected", thumb.dataset.checkoutSrc === initialImage);
+          });
+        } else if (isMobileCheckout && thumbs[1]) {
+          mainImage.src = thumbs[1].dataset.checkoutSrc;
+          thumbs.forEach((thumb) => {
+            thumb.classList.toggle("is-selected", thumb === thumbs[1]);
           });
         }
 
