@@ -10,6 +10,20 @@
       href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,700;1,400&family=Gentium+Plus&family=Geologica:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="preload"
+      as="image"
+      href="../public/assets/optimized/product-hero-mobile.webp"
+      media="(max-width: 760px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="../public/assets/updated/product/header-banner.png"
+      media="(min-width: 761px)"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="../styles.css" />
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
   </head>
@@ -71,7 +85,15 @@
     <main class="site-shell">
       <section class="product-stage" data-hero-height="752.058" aria-label="Elevate product page">
         <div class="product-canvas">
-          <img class="product-hero-bg" src="../public/assets/updated/product/header-banner.png" alt="" />
+          <img
+            class="product-hero-bg"
+            src="../public/assets/updated/product/header-banner.png"
+            srcset="../public/assets/optimized/product-hero-mobile.webp 900w, ../public/assets/updated/product/header-banner.png 1918w"
+            sizes="(max-width: 760px) 100vw, 100vw"
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+          />
 
           <h1 class="product-hero-title">Mental Clarity<br />Crafted for Achievers:</h1>
           <p class="product-hero-copy">
@@ -82,6 +104,8 @@
             class="product-banner-bottle"
             src="../public/assets/updated/home/elevate-front-by-pills.png"
             alt=""
+            fetchpriority="high"
+            decoding="async"
           />
 
           <h2 class="product-meet-title">Meet Elevate™ s.1</h2>
@@ -107,6 +131,8 @@
             class="product-bottle"
             src="../public/assets/updated/product/elevate-front-3.png"
             alt="Elevate s.1 supplement bottle"
+            loading="lazy"
+            decoding="async"
           />
           <p class="product-capsules">60 capsules</p>
 
@@ -307,6 +333,8 @@
               data-spotlight-main
               src="../public/assets/updated/product/spotlight-front-hires.png"
               alt="Elevate product spotlight"
+              loading="lazy"
+              decoding="async"
             />
 
             <button

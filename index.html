@@ -10,6 +10,20 @@
       href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&family=Gentium+Plus&family=Geologica:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="preload"
+      as="image"
+      href="./public/assets/optimized/home-hero-mobile.webp"
+      media="(max-width: 760px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="./public/assets/updated/home/header-image.png"
+      media="(min-width: 761px)"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
   </head>
@@ -70,7 +84,13 @@
     <main class="site-shell">
       <section class="desktop-stage" aria-label="Clime homepage desktop composition">
         <div class="home-canvas">
-          <img class="hero-bg" src="./public/assets/updated/home/header-image.png" alt="" />
+          <img
+            class="hero-bg"
+            src="./public/assets/updated/home/header-image.png"
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+          />
 
           <h1 class="hero-title">Mental Clarity<br />Crafted for Achievers:</h1>
           <p class="hero-copy">
@@ -81,6 +101,8 @@
             class="hero-bottle"
             src="./public/assets/updated/home/elevate-front-by-pills.png"
             alt="Elevate supplement bottle"
+            fetchpriority="high"
+            decoding="async"
           />
           <a class="hero-bottle-link product-link-hotspot" href="/elevate" aria-label="View Elevate product"></a>
 
@@ -98,6 +120,8 @@
               class="sandy-crop"
               src="./public/assets/updated/home/meet-elevate.png"
               alt="Elevate bottle resting on sand"
+              loading="lazy"
+              decoding="async"
             />
             <div class="intro-copy">
               <p>
@@ -115,12 +139,22 @@
             <p class="eyebrow process-eyebrow">Formulation Process</p>
             <h2 id="process-title">Unapologetically Dedicated</h2>
             <a class="tile team-tile" href="/team" aria-label="Meet the Team">
-              <img src="./public/assets/updated/home/meet-the-team.png" alt="Supplement ingredients" />
+              <img
+                src="./public/assets/updated/home/meet-the-team.png"
+                alt="Supplement ingredients"
+                loading="lazy"
+                decoding="async"
+              />
               <p class="tile-tier team-tier">stronger<br />connection</p>
               <h3>Meet the Team</h3>
             </a>
             <a class="tile philosophy-tile" href="/philosophy" aria-label="Our Philosophy">
-              <img src="./public/assets/updated/home/our-philosophy.png" alt="Lab notebook and ingredients" />
+              <img
+                src="./public/assets/updated/home/our-philosophy.png"
+                alt="Lab notebook and ingredients"
+                loading="lazy"
+                decoding="async"
+              />
               <p class="tile-tier philosophy-tier">harness<br />mind &amp; body</p>
               <h3>Our Philosophy</h3>
             </a>
@@ -131,6 +165,8 @@
               class="large-bottle"
               src="./public/assets/updated/home/elevate-front-2.png"
               alt="Elevate bottle close-up"
+              loading="lazy"
+              decoding="async"
             />
             <a class="large-bottle-link product-link-hotspot" href="/elevate" aria-label="View Elevate product"></a>
             <h2 id="meet-elevate-title">Meet Elevate™</h2>
@@ -146,6 +182,8 @@
             <img
               src="./public/assets/img/bacopa-monnieri-harvesting-1.png"
               alt="Hands harvesting Bacopa monnieri"
+              loading="lazy"
+              decoding="async"
             />
             <div class="plant-copy">
               <h2 id="plant-title">Plant to Package</h2>
@@ -208,6 +246,8 @@
             class="mobile-bottle"
             src="./public/assets/updated/home/elevate-front-by-pills.png"
             alt="Elevate supplement bottle"
+            fetchpriority="high"
+            decoding="async"
           />
           <a class="mobile-bottle-link product-link-hotspot" href="/elevate" aria-label="View Elevate product"></a>
         </header>
@@ -222,7 +262,12 @@
         </section>
 
         <section class="mobile-section">
-          <img src="./public/assets/updated/home/meet-elevate.png" alt="Elevate bottle resting on sand" />
+          <img
+            src="./public/assets/updated/home/meet-elevate.png"
+            alt="Elevate bottle resting on sand"
+            loading="lazy"
+            decoding="async"
+          />
           <p>
             elevate™ offers a bespoke solution to defend against brain-fog and distraction. Our
             team has combined lessons into this powerful companion to accelerate your growth
@@ -235,12 +280,22 @@
           <p class="mobile-kicker">Formulation Process</p>
           <h2>Unapologetically Dedicated</h2>
           <a class="mobile-tile" href="/team" aria-label="Meet the Team">
-            <img src="./public/assets/updated/home/meet-the-team.png" alt="Supplement ingredients" />
+            <img
+              src="./public/assets/updated/home/meet-the-team.png"
+              alt="Supplement ingredients"
+              loading="lazy"
+              decoding="async"
+            />
             <p>stronger<br />connection</p>
             <h3>Meet the Team</h3>
           </a>
           <a class="mobile-tile" href="/philosophy" aria-label="Our Philosophy">
-            <img src="./public/assets/updated/home/our-philosophy.png" alt="Lab notebook and ingredients" />
+            <img
+              src="./public/assets/updated/home/our-philosophy.png"
+              alt="Lab notebook and ingredients"
+              loading="lazy"
+              decoding="async"
+            />
             <p>harness<br />mind &amp; body</p>
             <h3>Our Philosophy</h3>
           </a>
@@ -251,6 +306,8 @@
             class="mobile-large-bottle"
             src="./public/assets/updated/home/elevate-front-2.png"
             alt="Elevate bottle close-up"
+            loading="lazy"
+            decoding="async"
           />
           <a class="mobile-large-bottle-link product-link-hotspot" href="/elevate" aria-label="View Elevate product"></a>
           <h2>Meet Elevate™</h2>
@@ -263,7 +320,12 @@
         </section>
 
         <section class="mobile-plant">
-          <img src="./public/assets/img/bacopa-monnieri-harvesting-1.png" alt="Hands harvesting Bacopa monnieri" />
+          <img
+            src="./public/assets/img/bacopa-monnieri-harvesting-1.png"
+            alt="Hands harvesting Bacopa monnieri"
+            loading="lazy"
+            decoding="async"
+          />
           <div>
             <h2>Plant to Package</h2>
             <p>

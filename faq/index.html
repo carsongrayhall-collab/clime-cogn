@@ -10,6 +10,20 @@
       href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&family=Gentium+Plus&family=Geologica:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="preload"
+      as="image"
+      href="../public/assets/optimized/philosophy-hero-mobile.webp"
+      media="(max-width: 760px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="../public/assets/philosophy/philosophy-1.png"
+      media="(min-width: 761px)"
+      fetchpriority="high"
+    />
     <link rel="stylesheet" href="../styles.css" />
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
   </head>
@@ -71,7 +85,15 @@
     <main class="site-shell">
       <section class="faq-stage" data-faq-hero-height="750.866" aria-label="Frequently Asked Questions">
         <div class="faq-canvas">
-          <img class="faq-hero" src="../public/assets/philosophy/philosophy-1.png" alt="" />
+          <img
+            class="faq-hero"
+            src="../public/assets/philosophy/philosophy-1.png"
+            srcset="../public/assets/optimized/philosophy-hero-mobile.webp 900w, ../public/assets/philosophy/philosophy-1.png 1918w"
+            sizes="(max-width: 760px) 100vw, 100vw"
+            alt=""
+            fetchpriority="high"
+            decoding="async"
+          />
 
           <h1 class="faq-page-title">Frequently Asked Questions</h1>
           <p class="faq-intro">
