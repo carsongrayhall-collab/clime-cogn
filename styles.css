@@ -766,38 +766,58 @@ img {
 .footer-links {
   color: var(--clime-paper);
   display: grid;
-  font-size: 40.379px;
-  font-weight: 700;
-  grid-template-columns: 326px 326px 409px 276px;
+  font-family: Gelasio, Georgia, serif;
+  font-size: 23px;
+  font-weight: 400;
+  grid-template-columns: 240px 240px 300px 210px;
   justify-content: space-between;
-  left: 68px;
-  line-height: 1.2;
+  left: 156px;
+  letter-spacing: 0;
+  line-height: 1.45;
   position: absolute;
-  top: 42px;
-  width: 1719px;
+  top: 78px;
+  width: 1448px;
 }
 
 .footer-links div {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 22px;
+}
+
+.footer-links a,
+.footer-links span {
+  color: inherit;
+  opacity: 0.88;
+  transition: color 160ms ease, opacity 160ms ease;
+}
+
+.footer-links a:hover,
+.footer-links span:hover {
+  color: var(--clime-menu-gold);
+  opacity: 1;
+}
+
+.footer-copyright {
+  color: var(--clime-paper);
+  font-family: Gelasio, Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  left: 156px;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0;
+  opacity: 0.58;
+  position: absolute;
+  top: 346px;
 }
 
 .social-arrows {
-  height: 219px;
-  left: 1760px;
-  position: absolute;
-  top: 49px;
-  width: 27px;
+  display: none;
 }
 
 .footer-rule {
-  background: var(--clime-paper);
-  height: 5px;
-  left: 68px;
-  position: absolute;
-  top: 377px;
-  width: 1799px;
+  display: none;
 }
 
 .mobile-home {
@@ -1679,7 +1699,7 @@ img {
 
 .team-page-title,
 .team-story-title {
-  color: var(--clime-sage);
+  color: var(--clime-ink);
   font-size: 60.663px;
   font-weight: 400;
   line-height: 1.2;
@@ -1700,7 +1720,7 @@ img {
 
 .team-intro,
 .team-story-copy {
-  color: var(--clime-sage);
+  color: var(--clime-ink);
   font-size: 36.519px;
   font-weight: 400;
   line-height: 1.14;
@@ -1760,7 +1780,7 @@ img {
 }
 
 .team-name-band {
-  background: rgba(207, 119, 123, 0.72);
+  background: rgba(217, 217, 217, 0.2);
   height: 181.705px;
   position: absolute;
   top: 613.255px;
@@ -1802,7 +1822,7 @@ img {
 }
 
 .team-member p {
-  color: var(--clime-sage);
+  color: var(--clime-ink);
   top: 830.292px;
 }
 
@@ -3138,21 +3158,33 @@ img {
 
   .mobile-footer {
     background: var(--clime-footer-brown);
-    padding: 46px 26px 64px;
+    padding: 34px 28px 44px;
   }
 
   .mobile-footer nav {
-    border-bottom: 4px solid var(--clime-paper);
     display: grid;
-    gap: 22px;
-    padding-bottom: 40px;
+    gap: 14px 28px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .mobile-footer a {
     color: var(--clime-paper);
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.1;
+    font-family: Gelasio, Georgia, serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.2;
+    opacity: 0.88;
+  }
+
+  .mobile-footer .footer-copyright {
+    color: var(--clime-paper);
+    font-family: Gelasio, Georgia, serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 28px 0 0;
+    opacity: 0.58;
+    position: relative;
   }
 
   .product-stage,
@@ -3516,17 +3548,26 @@ img {
 
   .footer-links {
     display: grid;
-    font-size: 23px;
-    gap: 24px;
-    grid-template-columns: 1fr;
+    font-size: 15px;
+    gap: 14px 28px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     left: auto;
+    line-height: 1.28;
     position: relative;
     top: auto;
     width: auto;
   }
 
   .footer-links div {
-    gap: 14px;
+    gap: 10px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+    left: auto;
+    margin-top: 28px;
+    position: relative;
+    top: auto;
   }
 
   .social-arrows {
@@ -3534,12 +3575,7 @@ img {
   }
 
   .footer-rule {
-    height: 3px;
-    left: auto;
-    margin-top: 34px;
-    position: relative;
-    top: auto;
-    width: 100%;
+    display: none;
   }
 
   .team-member {
@@ -3561,7 +3597,7 @@ img {
   }
 
   .team-name-band {
-    background: rgba(105, 63, 0, 0.72);
+    background: rgba(217, 217, 217, 0.2);
     height: auto;
     padding: 18px 12px;
     position: relative;
@@ -3583,7 +3619,7 @@ img {
   }
 
   .team-member p {
-    color: var(--clime-menu-olive);
+    color: var(--clime-ink);
     font-size: 22px;
     margin-top: 18px;
   }
@@ -4708,10 +4744,20 @@ img {
   .checkout-footer .footer-links a {
     color: #ffffff;
     font-family: Gelasio, Georgia, serif;
-    font-size: 9.136px;
-    font-weight: 700;
+    font-size: 7.8px;
+    font-weight: 400;
     line-height: normal;
-    margin: 0 0 14px;
+    margin: 0 0 10px;
+    opacity: 0.88;
+  }
+
+  .checkout-footer .footer-copyright {
+    color: #ffffff;
+    font-size: 6.8px;
+    left: 15.63px;
+    opacity: 0.58;
+    position: absolute;
+    top: 137px;
   }
 
   .checkout-footer .social-arrows {
@@ -4722,10 +4768,6 @@ img {
   }
 
   .checkout-footer .footer-rule {
-    background: #ffffff;
-    bottom: 39.7px;
-    height: 1.14px;
-    left: 15.63px;
-    width: calc(100% - 31.26px);
+    display: none;
   }
 }

@@ -95,10 +95,9 @@
             decoding="async"
           />
 
-          <h1 class="product-hero-title">Mental Clarity<br />Crafted for Achievers:</h1>
+          <h1 class="product-hero-title">Cognitive Enhancement<br />for High Performers.</h1>
           <p class="product-hero-copy">
-            Neural growth and focus. Hand-crafted products designed for long work-hours and
-            heightened functionality
+            Formulated to support neurogenesis, sustained focus, and prolonged mental endurance.
           </p>
           <img
             class="product-banner-bottle"
@@ -108,11 +107,11 @@
             decoding="async"
           />
 
-          <h2 class="product-meet-title">Meet Elevate™ s.1</h2>
+          <h2 class="product-meet-title">Meet Elevate&trade; s.1</h2>
           <p class="product-summary">
-            The first formula which not only deploys cognitive enhancement supplements, but
-            actualizes their synergies to enhance memory retention, neural processing speed, and
-            energy. See here for more.
+            Our flagship formulation doesn't just isolate cognitive ingredients&mdash;it actualizes their
+            synergies. Designed to comprehensively target and improve memory retention, neural
+            transmission speed, and mental stamina.
           </p>
 
           <p class="product-series-note">
@@ -123,8 +122,8 @@
 
           <div class="product-definition">
             <p class="definition-word">elevate&trade; <em>verb</em></p>
-            <p class="definition-pronunciation">el·e·vate</p>
-            <p><em>definition:<br />to improve morally, intellectually, or culturally</em></p>
+            <p class="definition-pronunciation">el&middot;e&middot;vate</p>
+            <p data-definition-text><em>definition:<br />to shift into a heightened state of executive function, intellectual clarity, and sustained focus</em></p>
           </div>
 
           <img
@@ -156,7 +155,7 @@
             <p>
               Ginkgo Biloba cleans and expands micro-blood vessels in the brain. It&rsquo;s unique
               shape accelerates oxygen and sugar transmission past the blood brain barrier.
-              Provides immediate energy, procts neurnos from stress, and combats free radicals
+              Provides immediate energy, protects neurons from stress, and combats free radicals
             </p>
           </section>
 
@@ -175,7 +174,7 @@
             <p class="formula">Ingredient 3</p>
             <p>
               Rhodiola Rosea (golden flower) acts as a premier adaptogen. Rhodiola optimizes
-              neurotransmitters to keep chemicals like dopamine and seratonin in the brain longer.
+              neurotransmitters to keep chemicals like dopamine and serotonin in the brain longer.
               This attacks mental and physical fatigue and shields against stress
             </p>
           </section>
@@ -204,7 +203,7 @@
             <h3>Ginkgo Biloba</h3>
             <p class="formula">C6H12O6</p>
             <img src="../public/assets/product/icons/ginkgo.svg" alt="" />
-            <p class="icon-caption">to grow and nurish</p>
+            <p class="icon-caption">to grow and nourish</p>
           </section>
 
           <section class="ingredient-icon-panel icon-2" data-icon="2" aria-label="Ingredient 2 molecular icon">
@@ -363,10 +362,9 @@
             </button>
 
             <p class="spotlight-copy">
-              High-dose capsules of a proprietary formula which activated and nourishes the brain&rsquo;s
-              natural focus regions. Sustainably sourced microcrystalline cellulose (free from
-              micro-contaminants) used as a sustainable ingredient carrier. Optimal
-              bioavailability, non-GMO, 60 capsules
+              Our flagship formulation doesn't just isolate cognitive ingredients&mdash;it actualizes their
+              synergies. Designed to comprehensively target and improve memory retention, neural
+              transmission speed, and mental stamina.
             </p>
 
             <div class="quantity-control spotlight-quantity" data-quantity-control aria-label="Quantity">
@@ -419,6 +417,7 @@
               </div>
             </nav>
             <img class="social-arrows" src="../public/assets/icons/socials-arrows.svg" alt="" />
+            <p class="footer-copyright">&copy; 2026 Clime, LLC. All rights reserved.</p>
             <div class="footer-rule"></div>
           </footer>
         </div>
@@ -475,6 +474,7 @@
         const icons = [...document.querySelectorAll("[data-icon]")];
         const lines = document.querySelector("[data-lines]");
         const cue = document.querySelector("[data-scroll-cue]");
+        const definitionText = document.querySelector("[data-definition-text]");
         const spotlightMain = document.querySelector("[data-spotlight-main]");
         const spotlightThumbs = [...document.querySelectorAll("[data-spotlight-src]")];
         const quantityControl = document.querySelector("[data-quantity-control]");
@@ -517,6 +517,7 @@
           cue.style.opacity = (0.3 * (1 - cueFade)).toFixed(3);
 
           const reveal1 = segment(chapterY, 220, 300);
+          if (definitionText) definitionText.style.opacity = (1 - reveal1).toFixed(3);
           const s12 = segment(chapterY, 560);
           const s23 = segment(chapterY, 900);
           const s34 = segment(chapterY, 1240);
